@@ -1,1 +1,28 @@
-/* Пиши стили тут */
+.rating-stars {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4px;
+    position: absolute;
+}
+
+.rating-stars input {
+    display: none;
+}
+
+.rating-stars label {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url("img/star-empty.png") center/cover no-repeat;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.rating-stars label:hover,
+.rating-stars label:hover ~ label {
+    background-image: url("img/star.png");
+}
+
+.rating-stars input:checked ~ label {
+    background-image: url("img/star.png");
+}
